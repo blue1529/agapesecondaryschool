@@ -165,6 +165,9 @@ header {
     font-weight: 400;
     font-style: normal;
 }
+.school-icon {
+    margin-left: -36px;
+}
 
 .logo-raw {
     position: absolute;
