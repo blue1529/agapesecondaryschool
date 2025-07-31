@@ -472,7 +472,7 @@ header {
     padding: 10px;
     width: 90%;
     margin: 0 auto;
-    text-align: justify;
+    text-align: left;
     font-size: 1.2rem;
 }
 
@@ -497,14 +497,6 @@ header {
     object-fit: cover;
     object-position: 0 3px;
 }
-
-/* Responsive tweaks */
-@media screen and (max-width: 600px) {
-    
-
-    
-}
-
 
 .facilities-title {
     margin-top: 50px;
