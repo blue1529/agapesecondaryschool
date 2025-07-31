@@ -108,6 +108,13 @@ header {
     width: 100%;
 }
 
+.nav-link:focus,
+.nav-link:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
 #home {
     width: 100%;
     height: 100vh;
@@ -493,26 +500,7 @@ header {
 
 /* Responsive tweaks */
 @media screen and (max-width: 600px) {
-    .teacher-description {
-        top: -130px;
-        left: -100px;
-        width: 80%;
-        font-size: 0.85rem;
-    }
-
-    .scroll-box {
-        min-width: 220px;
-        padding-left: 10px;
-        scroll-snap-align: end;
-    }
-
-    .scroll-director {
-        margin-left: 20px;
-        padding-left: 60px;
-    }
-    .director {
-        margin-left: 20px;
-    }
+    
 
     
 }
@@ -636,7 +624,7 @@ header {
 .school-life-box p {
     position: relative;
     top: -90px;
-    color: #000;
+    color: #ffffff;
     font-weight: 5  00;
     padding: 10px;
     font-family: "Lato", sans-serif;
@@ -804,11 +792,12 @@ header {
     padding: 5px;
     border-radius: 10px;
 }
+
 #contact {
-    background: #0000ff;
+    background: blue;
     width: 100%;
     height: 100%;
-    padding-bottom: 30px;
+    color: white;
 }
 .content {
     height: fit-content;
@@ -826,7 +815,7 @@ header {
 }
 .related-links a {
     text-decoration: none;
-    color: #000021;
+    color: #fff;
     width: fit-content;
     font-weight: 800;
 }
@@ -850,10 +839,21 @@ header {
     padding-bottom: 30px;
 }
 .contact-link a {
-    color: black;
+    color: wheat;
     font-size: 1.3rem;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
+}
+.contact-link-icons {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+}
+.contact-link-icons a {
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
 }
 .bottom-quote {
     margin-left: 20px;
@@ -872,7 +872,7 @@ header {
     border: solid 1px black;
     text-align: center;
     font-weight: bold;
-    background-color: #fff;
+    background-color: #0000ff;
     font-style: oblique;
 }
 .map:hover {
@@ -906,7 +906,17 @@ header {
     color: #fff;
     transition: 2s smooth;
 }
-
+.ending {
+    text-align: center;
+    font-size: 1.2rem;
+    color: black;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 20px;
+    
+    margin-top: 50px;
+    background-color: #fff;
+}   
 
 
 
@@ -1009,6 +1019,7 @@ header {
         width: 80%;
         height: auto;
         padding: 0;
+        margin-top: -150px;
         transition: 3s ease ;
     }
     /*Enroll Button
@@ -1024,6 +1035,9 @@ header {
     }
     */
     
+    #about {
+        padding-bottom: 0;
+    }
     .about-us-pics {
         width: 0;
     }
@@ -1031,8 +1045,8 @@ header {
     width: 90%;
     height: auto;
     max-height: 400px;
-    margin-top: 400px;
-    }
+    margin-top: 50px;
+    }a
     .school-life-title {
         font-size: 1.4rem;
     }
@@ -1057,15 +1071,28 @@ header {
         max-width: 250px;
         min-width: 200px;
         height: 300px;
+        min-width: 220px;
+        padding-left: 10px;
+        scroll-snap-align: end;
     }
 
-    .teacher-description {
+    .teacher-description {    
+        left: -100px;
         width: 220px;
         margin-left: 20px;
         font-size: 1.4rem;
         /* top controls position of text box*/
         top: -170px;
         text-align: left;
+    }
+
+    .scroll-director {
+        margin-left: 20px;
+        padding-left: 60px;
+        margin-right: 30px;
+    }
+    .director {
+        margin-left: 20px;
     }
     .mandawala {
         height: 300px;
@@ -1078,10 +1105,6 @@ header {
         object-fit: cover;
         margin-left: -80px;
     }
-    .scroll-director {
-        margin-right: 30px;
-    }
-
     .news-card {
         margin-left: 10px;
         width: 100%;
@@ -1118,9 +1141,10 @@ header {
     }
     .contact-title {
         color: white;
+        padding-top: 20px;
     }
     .content {
-        margin-top: 200px;
+        margin-top: 120px;
     }
     .related-links-title {
         text-align: left;
@@ -1144,23 +1168,26 @@ header {
 
 /* Medium devices (tablets, 600px to 899px) */
 @media screen and (min-width: 600px) and
-(max-width: 899px) {
+(max-width: 950px) {
     
     #home {
-        height: 120vh;
+        height: 100%;
+        min-height: 700px;
         width: 100%;
     }
     .fill {
-        height: 120vh;
+        height: 100%;
+        min-height: 700px;
     }
     .background {
-        height: 120vh;
+        height: 100%;
+        min-height: 700px;
         background-image: url('pics/group photo.jpg');
         background-position: -600px -60px;
     }
     .blur {
-        height: 120vh;
-        width: 100%;
+        height: 100%;
+        min-height: 700px;
     }
     .bottom {
         width: 100%;
@@ -1174,13 +1201,7 @@ header {
         z-index: 5;
     }
     .introduction {
-        position: absolute;
-        top: 300px;
-        left: 10%;
-        width: 80%;
-        height: auto;
-        padding: 0;
-        transition: 3s ease ;
+        margin-top: -180px;
     }
     .about-us-pics {
         width: 0;
@@ -1218,18 +1239,15 @@ header {
     }
 }
 
-
-
-
     /* Large devices (desktops, 900px to 1199px) */
-@media (min-width: 900px) and (max-width: 1067px) {
+@media (min-width: 950px) and (max-width: 1067px) {
 
     header {
         font-size: 1.8rem;
         width: 100%;
     }
     #nav-bar {
-        width: 400px;
+        width: 100%;
     }
     .logo {
         margin-top: -3px;
@@ -1356,13 +1374,15 @@ header {
     }
     
 }
-    /* Extra large devices (1200px and up) */
-    @media (min-width: 1200px) {
-    header {
-        font-size: 3.5rem;
-    }
+/* Extra large devices (1200px and up) */
+@media (min-width: 1070px) {
     .title {
-        font-size: 2.2rem;
-        line-height: 30px;
+        font-size: 1.8rem;
+    }
+    .about-us-pics {
+        margin-top: -1300px;
+    }
+    #about  {
+        padding-bottom: 900px;
     }
 }
