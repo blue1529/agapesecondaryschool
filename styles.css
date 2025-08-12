@@ -15,9 +15,10 @@ html, body {
 }
 
 
+
 header {
     width: 100%;
-    height: 80px;
+    height: 100px;
     background-color: white;
     border-bottom: 2px solid black;
     position: fixed;
@@ -46,6 +47,7 @@ header {
     font-size: 2.5rem;
     color: #4444e6;
     transition: 0.5s;
+    width: 100%;
 }
 .title:hover {
     text-shadow:0 0 3px #38b0ff,
@@ -77,6 +79,7 @@ header {
 
 #nav-links li {
     list-style: none;
+    width: 100%;
 }
 
 .nav-link {
@@ -87,6 +90,7 @@ header {
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
+    width: 100%;
 }
 
 .nav-link::after {
@@ -118,6 +122,7 @@ header {
 #home {
     width: 100%;
     height: 100vh;
+    max-height: 1000px;
     background-color: white;  
 }
 .fill {
@@ -178,7 +183,7 @@ header {
 
 .logo-raw {
     position: absolute;
-    top: 40%;
+    top: 20%;
     right: 10%;
     z-index: 9;
 }
@@ -237,7 +242,8 @@ header {
 .about-us-text {
     margin-left: 50vw;
     padding: 20px;   
-    height: auto;
+    height: 90vh;
+    overflow-y: scroll;
     font-size: 1.5rem;
     font-family: "Lato", sans-serif;
     font-style: normal;
@@ -247,7 +253,7 @@ header {
     max-width: 600px;
     height: auto;
     aspect-ratio: 16 / 9;
-    margin: 0 auto;
+    margin: 50px auto;
     display: block;
     border-radius: 10px;
 }
@@ -592,7 +598,7 @@ header {
     max-width: 450px;
     min-width: 400px;
     height: 500px;
-    color: #000;
+    color: #fff;
     font-size: 1.2rem;
     scroll-snap-align: start;
     border-radius: 10px;
@@ -934,6 +940,21 @@ header {
     .nav-link {
         font-size: 1.8rem;
         margin-left: -30px;
+        
+    }
+    #nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        pointer-events: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #f0f0f0;
+        width: 220px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        font-size: 1.8rem;
+        z-index: 19;
     }
     #nav-links.show {
         top: 0;
@@ -943,13 +964,23 @@ header {
         display: flex;
         width: 60%;
         font-size: 2rem;
-        height: 500px;
-        min-height: 400px;
+        height: 400px;
+        min-height: 300px;
         overflow: scroll;
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        
     }
     .hamburger {
-        padding: 0;
-        margin-right: -20px;
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 3rem;
+        cursor: pointer;
+        z-index: 20;
+        transition: 0.3s ease;
     }
 
     .agape-logo {
@@ -958,6 +989,7 @@ header {
     .title {
         font-size: 1.5rem;
         text-align: left;
+        width: 100%;
     }
     .related-links-title {
         margin-top: -100px;
@@ -976,19 +1008,25 @@ header {
     
     #home {
         width: 100%;
+        height: 100vh;
+        min-height: 800px;
+        max-height: 900px;
     }
     .fill {
         width: 100%;
-        height: 100%;
+        height: 100vh;
+        max-height: 900px;
     }
     .background {
         margin-top: 80px;
-        height: 80vh;
+        height: 100vh;
+        max-height: 900px;
         background-image: url('pics/group photo.jpg');
         background-position: -600px -60px;
     }
     .blur {
-        height: 99.5%;
+        height: 100vh;
+        max-height: 900px;
         width: 100%;
         min-width: 100%;
         margin-top: 80px;
@@ -996,7 +1034,7 @@ header {
     .bottom {
         width: 100%;
         position: relative;
-        bottom: 55px;
+        bottom: 15px;
     }
     .overlay-bottom {
         background-color: transparent;
@@ -1006,7 +1044,7 @@ header {
     }
     .introduction {
         position: absolute;
-        top: 300px;
+        top: 500px;
         left: 10%;
         width: 80%;
         height: auto;
@@ -1038,7 +1076,7 @@ header {
     height: auto;
     max-height: 400px;
     margin-top: 50px;
-    }a
+    }
     .school-life-title {
         font-size: 1.4rem;
     }
@@ -1152,229 +1190,481 @@ header {
 
     .map {
         background-color: blue;
-        color: #000;
+        color: white;
     }
 
 }
-
 
 /* Medium devices (tablets, 600px to 899px) */
-@media screen and (min-width: 600px) and
-(max-width: 950px) {
-    
-    #home {
-        height: 100%;
-        min-height: 700px;
-        width: 100%;
-    }
-    .fill {
-        height: 100%;
-        min-height: 700px;
-    }
-    .background {
-        height: 100%;
-        min-height: 700px;
-        background-image: url('pics/group photo.jpg');
-        background-position: -600px -60px;
-    }
-    .blur {
-        height: 100%;
-        min-height: 700px;
-    }
-    .bottom {
-        width: 100%;
-        position: relative;
-        bottom: 30px;
-    }
-    .overlay-bottom {
-        background-color: transparent;
-        position: relative;
-        bottom: 0;
-        z-index: 5;
-    }
-    .introduction {
-        margin-top: -180px;
-    }
-    .about-us-pics {
-        width: 0;
-    }
-    .title {
-    font-size: 1.6rem;
-
-    }
-    .logo {
+@media screen and (min-width: 500px) and
+(max-width: 899px) {
+    header {
         height: auto;
     }
-    .logo-raw {
-        margin-left: 50%;
-    }
-    .about-us-text {
-        margin-left: 0vw;
-    }
-    .about-us-pics {
-        display: none   ;
-    } 
-    .title {
-        font-size: 1.4rem;
-    }
-    #nav-links.show {
-        font-size: 1.3rem;
-    }
-    .logo-raw {
-        width: 0;
-    }
-    .logo-raw-pic {
-        width: 0;
-        min-width: 0;
-        max-width: 0;
-        max-height: 0;
-    }
-}
-
-    /* Large devices (desktops, 900px to 1199px) */
-@media (min-width: 950px) and (max-width: 1067px) {
-
-    header {
-        font-size: 1.8rem;
-        width: 100%;
-    }
-    #nav-bar {
-        width: 100%;
-    }
-    .logo {
-        margin-top: -3px;
-        width: 100%;
-    }
-    .title {
-        font-size: 1.8rem;
-        line-height: 30px;
-    }
     .hamburger {
+        display: block;
         position: absolute;
-        right: 0;
-        margin-right: 50px;  
-    }
-    #home {
-        max-height: 100vh;
-        width: 1068px;
-    }
-    .fill {
-        height: 100vh;
-    }
-    .background {
-        height: 100vh;
-    }
-    .blur {
-        max-height: 100vh;
-        width: 100%;
-    }
-    .botton {
-        margin-top: 200px;
-    }
-    .overlay-bottom {
-        position: relative;
-        top: 10px;
-    }
-    .introduction {
-        margin-top: -200px;
-        font-size: 1.4rem;
-        max-width: 400px;
-    }
-    .logo-raw-pic {
-        height: 400px;
-        width: 300px;
-        object-fit: cover;
-        margin-top: -200px;
-        margin-left: -200px;
-    }
-    .about-us-pics {
-        position: relative;
-        left: 0;
-        top: -600px;
-        width: 50vw;
-        height: 100%;
-        overflow: hidden;
-        transition: all; 
-    }
-    .about-us-video {
-    width: 90%;
-    height: auto;
-    max-height: 400px;
-    margin-top: 100px;
-    margin-bottom: 400px;
-    }
-}
-@media (max-width: 1068px) {
-    .hamburger {
-    display: block;
-    position: absolute;
-    right: 30px;
+        right: 30px;
+        top: 0;
+        font-size: 4rem;
+        cursor: pointer;
+        z-index: 20;
     }
     #nav-links {
+        display: none; /* Hide nav links by default */
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #f0f0f0;
+        width: 220px;
+        pointer-events: none;
+        flex-direction: column;
+    }
+    #nav-links.show {
+        display: flex; /* Show when toggled by hamburger */
         flex-direction: column;
         position: absolute;
         top: 70px;
-        right: -220px;  /* off-screen initially */
+        right: 0;
         background: #f0f0f0;
-        width: 180px;
+        width: 220px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         border-radius: 8px;
-        opacity: 0;
-        pointer-events: none;
-        transition: right 1.6s ease, opacity 0.6s ease;
-    }
-    #nav-links.show {
-        top: 0;
-        right: 9px;
         opacity: 1;
         pointer-events: auto;
-        display: flex;
-        width: 50%;
-        font-size: 2rem;
-        height: 300px;
-        overflow: scroll;
+        font-size: 1.8rem;
+        z-index: 19;
+        transition: 3s;
+        transform: translateY(0);
+    }
+    #nav-bar {
+        width: 0;
+    }
+    .title {
+        width: 100%;
+        max-width: 500px;
+        min-width: 490px;
     }
     #home {
         height: 100vh;
-        width: 1068px;
+        min-height: 700px;
+        max-height: 800px;
     }
     .fill {
         height: 100vh;
+        min-height: 700px;
+        max-height: 800px;
     }
     .background {
         height: 100vh;
+        min-height: 700px;
+        max-height: 800px;
     }
     .blur {
         height: 100vh;
-        width: 100%;
+        min-height: 700px;
+        max-height: 800px;
     }
-    .botton {
-        margin-top: 200px;
-    }
-    .overlay-bottom {
+    .bottom {
         position: relative;
-        top: 10px;
+        top: -20px;
     }
-    .introduction {
+    
+    #about {
+        padding-bottom: 0;
+    }
+    .logo-raw {
+        visibility: hidden;
+    }
+    .logo-raw-pic {
+        visibility: hidden;
+    }
+
+}
+/* Fot the about us content*/
+@media screen and (min-width: 767px) and (max-width: 899px) {
+    #about {
+        width: 100%;
+        height: 100vh;
+        min-height: 900px;
+        margin-bottom: 400px;
+    }
+    .about-us-pics {
+        visibility: hidden;
+    }
+    .about-us-text {
+        margin: 0;
+    }
+    .about-us-video {
         position: absolute;
-        top: 300px;
-        left: 10%;
-        width: 80%;
-        height: auto;
-        padding: 0;
-        transition: 3s ease ;
+        top: 750px;
+        left: 50px;
+    }
+    .bottom {
+        position: relative;
+        top: 0;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 0;
+        font-size: 4rem;
+        cursor: pointer;
+        z-index: 20;
+    }
+    #nav-links {
+        display: none; /* Hide nav links by default */
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        overflow: scroll;
+        background: #f0f0f0;
+        width: 220px;
+        pointer-events: none;
+        flex-direction: column;
+    }
+    #nav-links.show {
+        display: flex; /* Show when toggled by hamburger */
+        flex-direction: column;
+        position: absolute;
+        top: 0px;
+        right: 50px;
+        background: #f0f0f0;
+        width: 320px;
+        height: 50vh;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        opacity: 1;
+        pointer-events: auto;
+        font-size: 1.8rem;
+        overflow: scroll;
+        z-index: 19;
+        transition: 3s;
+        transform: translateY(0);
+    }
+    #nav-bar {
+        width: 0;
+    }
+
+    
+}
+@media screen and (min-width: 899px) and (max-width: 1064px) {
+    .title {
+        font-size: 2.5rem;
+        width: 100%;
+        min-width: 700px;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 10px;
+        font-size: 4rem;
+        cursor: pointer;
+        z-index: 20;
+    }
+    #nav-links {
+        display: none; /* Hide nav links by default */
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #f0f0f0;
+        width: 220px;
+        pointer-events: none;
+        flex-direction: column;
+    }
+    #nav-links.show {
+        display: flex; /* Show when toggled by hamburger */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #f0f0f0;
+        width: 220px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        opacity: 1;
+        pointer-events: auto;
+        font-size: 1.8rem;
+        z-index: 19;
+        transition: 3s;
+        transform: translateY(0);
+    }
+    #nav-bar {
+        width: 0;
+    }
+    #home {
+        min-height: 700px;
+        max-height: 800px;
+    }
+    .fill {
+        min-height: 700px;
+        max-height: 800px;
+    }
+    .background {
+        min-height: 700px;
+        max-height: 800px;
+    }
+    .blur {
+        min-height: 700px;
+        max-height: 800px;
+    }
+    .bottom {
+        position: relative;
+        top: 2px;
+    }
+    .about-us-pics {
+        position: relative;
+        top: 50px;
+    }
+    .about-us-video {
+        padding-bottom: 50px;
     }
     
 }
-/* Extra large devices (1200px and up) */
-@media (min-width: 1070px) {
+
+
+@media screen and (min-width: 1064px) and (max-width: 1500px) {
+    
+    #home {
+        min-height: 700px;
+        max-height: 800px;
+    }
+    .fill {
+        height: auto;
+        min-height: 700px;
+        max-height: 800px;
+    }
+    .background {
+        
+        min-height: 700px;
+        max-height: 800px;
+    }
+    .blur {
+        height: auto;
+        min-height: 700px;
+        max-height: 800px;
+    }
+    .bottom {
+        position: relative;
+        top: 2px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    header {
+        height: 100px;
+    }
     .title {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
+        text-align: left;
+        
+    }
+    .logo {
+        width: 100%;
+        max-width: 500px;
+    }
+    .hamburger {
+        display: none;
+    }
+    #nav-bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #nav-links {
+        display: flex;
+        gap: 30px;
+        font-size: 1.3rem;
+        position: static;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .nav-link {
+        font-size: 1.3rem;
+        margin-left: 0;
+    }
+    .agape-logo {
+        width: 90px;
+        height: 80px;
+    }
+    .logo-raw-pic {
+        min-width: 300px;
+        width: 500px;
+    }
+    .introduction {
+        top: 150px;
+        left: 50px;
+        width: 300px;
+        font-size: 1.4rem;
+    }
+    .welcome-statement {
+        font-size: 3rem;
+    }
+    .about-us {
+        font-size: 1.3rem;
+    }
+    .about-us-text {
+        font-size: 1.5rem;
     }
     .about-us-pics {
-        margin-top: -1300px;
+        margin-top: -1600px;
     }
-    #about  {
-        padding-bottom: 900px;
+    .about-us-video {
+        margin-top: 100px;
+        margin-bottom: 500px;
+
+    }
+    .school-life-title {
+        font-size: 1.6rem;
+    }
+    .school-life-box h3 {
+        font-size: 2rem;
+    }
+    .teacher-description {
+        font-size: 1.2rem;
+    }
+    .facilities-title {
+        font-size: 2.5rem;
+    }
+    .facilities-card h3 {
+        font-size: 1.7em;
+    }
+    .achievements-section h2 {
+        font-size: 2.5em;
+    }
+    .stat-card h3 {
+        font-size: 2em;
+    }
+    .stat-card p {
+        font-size: 1.6rem;
+    }
+    .awards-section h3,
+    .alumni-section h3 {
+        font-size: 1.8em;
+    }
+    .alumni-card blockquote {
+        font-size: 1.4rem;
+    }
+    .alumni-card p {
+        font-size: 1.3rem;
+    }
+    #news h2 {
+        font-size: 2.5rem;
+    }
+    .news-prompt {
+        font-size: 1.5rem;
+    }
+    .contact-title {
+        font-size: 2rem;
+    }
+    .related-links-title,
+    .related-links {
+        font-size: 1.5rem;
+    }
+    .bottom-quote,
+    .map {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+
+/* Need to adjust the HOME */
+@media screen and (min-width: 1500px) and (max-width: 2400px) {
+    .title {
+        font-size: 2rem;
+    }
+    .nav-link {
+        font-size: 1.7rem;
+    }
+    .agape-logo {
+        width: 140px;
+        height: 120px;
+    }
+    .logo-raw-pic {
+        min-width: 500px;
+        width: 800px;
+    }
+    .introduction {
+        top: 200px;
+        left: 100px;
+        width: 500px;
+        font-size: 2rem;
+    }
+    .welcome-statement {
+        font-size: 4rem;
+    }
+    .about-us {
+        font-size: 2rem;
+    }
+    .about-us-text {
+        font-size: 2.2rem;
+    }
+    .school-life-title {
+        font-size: 2.2rem;
+    }
+    .school-life-box h3 {
+        font-size: 2.5rem;
+    }
+    .teacher-description {
+        font-size: 1.8rem;
+    }
+    .facilities-title {
+        font-size: 3.5rem;
+    }
+    .facilities-card h3 {
+        font-size: 2.5em;
+    }
+    .achievements-section h2 {
+        font-size: 3.5em;
+    }
+    .stat-card h3 {
+        font-size: 2.5em;
+    }
+    .stat-card p {
+        font-size: 2rem;
+    }
+    .awards-section h3,
+    .alumni-section h3 {
+        font-size: 2.5em;
+    }
+    .alumni-card blockquote {
+        font-size: 2rem;
+    }
+    .alumni-card p {
+        font-size: 1.8rem;
+    }
+    #news h2 {
+        font-size: 3.5rem;
+    }
+    .news-prompt {
+        font-size: 2rem;
+    }
+    .contact-title {
+        font-size: 2.5rem;
+    }
+    .related-links-title,
+    .related-links {
+        font-size: 2rem;
+    }
+    .bottom-quote,
+    .map {
+        font-size: 1.8rem;
     }
 }
