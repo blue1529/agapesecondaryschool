@@ -44,10 +44,11 @@ header {
 }
 .title {
     font-family: 'Oswald', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #4444e6;
     transition: 0.5s;
     width: 100%;
+    min-width: 600px;
 }
 .title:hover {
     text-shadow:0 0 3px #38b0ff,
@@ -61,7 +62,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    margin-left: 0;
+    margin-left: 80px;
 }
 
 .hamburger {
@@ -161,7 +162,7 @@ header {
     top: 150px;
     left: 50px;
     width: 300px;
-    height: 100%;
+    height: fit-content;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.4rem;
     color: white;
@@ -228,7 +229,7 @@ header {
     width: 100%;
     background-color: #fff;
     margin-top: 80px;
-    padding-bottom: 400px;
+    padding-bottom: 200px;
 }
 .about-us {
     font-family: "Bebas Neue", sans-serif;
@@ -256,6 +257,8 @@ header {
     margin: 50px auto;
     display: block;
     border-radius: 10px;
+    margin-top: 200px;
+
 }
 
 /* See More Button 
@@ -278,9 +281,9 @@ header {
 
 .about-us-pics {
     position: relative;
-    margin-top: -1000px;
     left: 0;
     top: 0;
+    margin-top: -600px;
     width: 50vw;
     height: 100%;
     overflow: hidden;
@@ -355,6 +358,81 @@ header {
     padding: 10px;
 }
 
+
+
+/* School Fees Section */
+.fees-section {
+    background: linear-gradient(135deg, #f3f4f6, #ffffff);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.fees-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fees-title {
+    font-size: 2.3rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.fees-subtitle {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.fees-card, .details-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.fees-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fees-card li {
+    font-size: 1.4rem;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.fees-card li:last-child {
+    border-bottom: none;
+}
+
+.note {
+    font-size: 1.3rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+.details-card h3 {
+    color: #004080;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+.details-card p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .fees-title {
+    font-size: 1.5rem;
+    }
+
+    .fees-card, .details-card {
+    padding: 15px;
+    }
+}
 
 .subject-section {
     margin-top: 20px;
@@ -623,7 +701,8 @@ header {
     position: relative;
     top: -90px;
     color: #ffffff;
-    font-weight: 5  00;
+    font-weight: 600;
+    font-size: 1.5rem;
     padding: 10px;
     font-family: "Lato", sans-serif;
     text-align: justify;
@@ -964,8 +1043,8 @@ header {
         display: flex;
         width: 60%;
         font-size: 2rem;
-        height: 400px;
-        min-height: 300px;
+        height: 100%;
+        min-height: 350px;
         overflow: scroll;
         visibility: visible;
         opacity: 1;
@@ -975,8 +1054,8 @@ header {
     .hamburger {
         display: block;
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 10px;
+        right: 10px;
         font-size: 3rem;
         cursor: pointer;
         z-index: 20;
@@ -989,7 +1068,9 @@ header {
     .title {
         font-size: 1.5rem;
         text-align: left;
-        width: 100%;
+        word-wrap:normal;
+        min-width: 80%;
+        height: 80px;
     }
     .related-links-title {
         margin-top: -100px;
@@ -1187,7 +1268,6 @@ header {
         color: white;
         font-size: 1.7rem;
     }
-
     .map {
         background-color: blue;
         color: white;
@@ -1195,7 +1275,7 @@ header {
 
 }
 
-/* Medium devices (tablets, 600px to 899px) */
+/* Medium devices (tablets, 500px to 899px) */
 @media screen and (min-width: 500px) and
 (max-width: 899px) {
     header {
@@ -1300,7 +1380,7 @@ header {
     }
     .about-us-video {
         position: absolute;
-        top: 750px;
+        top: 600px;
         left: 50px;
     }
     .bottom {
@@ -1339,6 +1419,7 @@ header {
         background: #f0f0f0;
         width: 320px;
         height: 50vh;
+        max-height: 200px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         border-radius: 8px;
         opacity: 1;
@@ -1352,8 +1433,6 @@ header {
     #nav-bar {
         width: 0;
     }
-
-    
 }
 @media screen and (min-width: 899px) and (max-width: 1064px) {
     .title {
@@ -1430,7 +1509,10 @@ header {
     .about-us-video {
         padding-bottom: 50px;
     }
-    
+    .about-us-text {
+        overflow-y: scroll;
+        height: 600px;
+    }
 }
 
 
@@ -1521,12 +1603,9 @@ header {
     .about-us-text {
         font-size: 1.5rem;
     }
-    .about-us-pics {
-        margin-top: -1600px;
-    }
     .about-us-video {
         margin-top: 100px;
-        margin-bottom: 500px;
+        margin-bottom: 100px;
 
     }
     .school-life-title {
@@ -1592,6 +1671,10 @@ header {
     }
     .nav-link {
         font-size: 1.7rem;
+    }
+    #nav-bar {
+        position: relative;
+        right: -20%;
     }
     .agape-logo {
         width: 140px;
