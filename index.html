@@ -51,7 +51,7 @@
             <p class="welcome-statement"><img src="pics/school_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="school" class="school-icon" loading="lazy">  Welcome To <strong>Agape Secondary School</strong></p>
             <br>
             <br>
-            <p>A place where we equip the future generation with skills in all aspects of their lives😊</p>
+            <p>A place where we equip the future generation with skills in all aspects of their lives!</p>
         </div>
         <!-- This is for the logo in the home section -->
         <div class="logo-raw">
@@ -73,23 +73,22 @@
         <div class="about-us">
             <h2>About Agape Secondary School</h2>
         <div>
-        <div class="about-us-text">
-            <p><b><i>Agape Secondary School</i></b> is part of the arm of Education Department of Agape Life Church, Chilomoni Branch. The school is located in Chilomoni Blantyre.</p>
+        <div class="about-us-text" id="aboutText">
+            <p><b><i>Agape Secondary School</i></b> is part of the arm of Education Department of Agape Life Church, Chilomoni Branch. It is a <strong>day secondary school</strong> is located in <i> Blantyre, Chilomoni Nthukwa.</i></p>
+
             <p>At Agape Secondary School, we believe education is more than academics — it is the foundation for building character, vision, and a brighter future.</p>
+            <b class="about-us-miniheaders">MISSION</b>
             <p>Founded with a passion for excellence and guided by the values of love, respect, and integrity, our school provides a nurturing environment where students can grow intellectually, morally, and socially.</p>
             <p>We offer a balanced curriculum that combines strong academic programs, co-curricular activities, and life skills training. Our dedicated teachers are committed to bringing out the best in every learner, encouraging critical thinking, creativity, and a spirit of service to the community.</p>
             <p>At Agape Secondary School, every student matters. We foster a culture where discipline meets compassion, ensuring that learners are not only prepared for examinations, but also for life beyond the classroom.</p>
-            
-            <!-- See More button available 
-            <button class="see-more">See More...→</button>
-            -->
-            <!-- This is for the about section theme -->
-            <div class="about-theme">
-                <hr size="5px", color="black">
-                <blockquote class="quote-one">"Empowering The Next Generation"</blockquote>
-                <hr size="5px", color="black">
             </div>
-        </div>
+            <!-- See More Button -->
+    <div class="see-more-container">
+        <button id="seeMoreBtn" class="see-more">See More →</button>
+    </div>
+    
+            
+        
         <!-- About us pictures -->
         <div class="about-us-pics">
             <img src="pics/logo raw - Copy.png" alt="logo raw" class="about-image">
@@ -97,9 +96,17 @@
             <img src="pics/students.jpg" alt="students" class="about-image">
         </div>
 
+        <!-- This is for the about section theme -->
+            <div class="about-theme">
+
+                
+                <hr size="5px", color="black">
+                <blockquote class="quote-one">"Empowering The Next Generation"</blockquote>
+                <hr size="5px", color="black">
+            </div>
         <!-- This is for the about us video -->
         <div class="about-us-video">
-                <video width="500" height="300" class="about-us-video"  autoplay controls loop>
+                <video width="500" height="300" class="about-us-video-inside"  autoplay controls loop>
                 <source src="pics/Get to know us😊 ｜ Agape Secondary School.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -118,15 +125,25 @@
     <div class="fees-card">
     <ul>
         <li><strong>Total: </strong> MWK 100,000 <i>per term</i></li>
+        <li><strong>Registration Fee: </strong> MWK 5,000</li>
     </ul>
+    <!--
     <p class="note">* All fees <b>DO NOT</b> include meals and extracurricular activities.</p>
+    -->
+    
     </div>
 
     <div class="details-card">
     <h3>Additional Information</h3>
-    <p>Payment is due before the first day of each term. Late payments may incur a small surcharge. For bank details or installment plans, contact the school bursar’s office.</p>
+    <p>Payment is due before the first day of each term. For bank details or installment plans, contact the school bursar’s office.</p>
     <h3>Bank Details</h3>
-    
+    <p class="accdetails">
+        <strong class="bankname">Centenary Bank</strong>
+        <br>
+        <strong class="bankname">National Bank of Malawi</strong>
+        <br>
+        For more details, contact the school.
+    </p>
     </div>
 </div>
 </section>
@@ -205,7 +222,7 @@
     </div> 
     
     <div class="scroll-box">
-        <img src="pics/Staff Members/" alt="Mrs. Mzondwase Shaba-Hunga" class="member Mrs. Mzondwase">
+        <img src="pics/Staff Members/Ms Mzondwase Shaba.jpg" alt="Mrs. Mzondwase Shaba-Hunga" class="member Mrs. Mzondwase">
         <p class="teacher-description">
             <b>Mrs. Mzondwase Shaba-Hunga</b> - <i>Agriculture Teacher</i>
             <br>
@@ -447,6 +464,7 @@
         <h2>Contact Us</h2>
     </div>
         <div class="content">
+            <!-- Related Links-->
         <div class="related-links-title">
             <h3>Related Links</h3>
             <div class="related-links">
@@ -455,6 +473,18 @@
             <a rel="noopener" href="https://mie.edu.mw/" target="_blank">MIE</a>
         </div>           
         </div>
+        <!-- Internal Links-->
+        <div class="related-links-title dissapearing-links">
+            <h3>Agape Secondary School</h3>
+            <div class="related-links">
+            <a href="#home" >Home</a>
+            <a href="#about" >About</a>
+            <a href="#fees" >Fees</a>
+            <a href="#staff" >Teachers</a>
+            <a href="#school-life-activities">Activities</a>
+        </div>           
+        </div>
+
         <!--
         <div class="bottom-quote">
             <p>"Empowering the next generation to lead a successful Malawi."</p>

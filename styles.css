@@ -18,7 +18,7 @@ html, body {
 
 header {
     width: 100%;
-    height: 100px;
+    height: 80px;
     background-color: white;
     border-bottom: 2px solid black;
     position: fixed;
@@ -50,12 +50,13 @@ header {
     width: 100%;
     min-width: 600px;
 }
+/*
 .title:hover {
     text-shadow:0 0 3px #38b0ff,
                 0 0 3px #38b0ff,
                 0 0 3px #38b0ff;
 }
-
+*/
 #nav-bar {
     width: 100%;
     display: flex;
@@ -63,13 +64,14 @@ header {
     align-items: center;
     background-color: white;
     margin-left: 80px;
+    z-index: 7;
 }
 
 .hamburger {
     display: none;
     font-size: 40px;
     cursor: pointer;
-    
+    z-index: 7;
 }
 
 /* Nav Links */
@@ -184,7 +186,7 @@ header {
 
 .logo-raw {
     position: absolute;
-    top: 20%;
+    top: 50%;
     right: 10%;
     z-index: 9;
 }
@@ -229,7 +231,6 @@ header {
     width: 100%;
     background-color: #fff;
     margin-top: 80px;
-    padding-bottom: 200px;
 }
 .about-us {
     font-family: "Bebas Neue", sans-serif;
@@ -243,11 +244,15 @@ header {
 .about-us-text {
     margin-left: 50vw;
     padding: 20px;   
-    height: 90vh;
-    overflow-y: scroll;
+    max-height: 600px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
     font-size: 1.5rem;
     font-family: "Lato", sans-serif;
     font-style: normal;
+}
+.about-us-miniheaders {
+    text-decoration: underline;
 }
 .about-us-video {
     width: 100%;
@@ -260,6 +265,42 @@ header {
     margin-top: 200px;
 
 }
+
+/* Expanded state */
+.about-us-text.expanded {
+    max-height: 1000px; /* large enough to show all text */
+}
+
+/* See More Button */
+.see-more-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.see-more {
+    background: transparent;
+    color: black;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: sans-serif;
+    transition: background 0.3s ease;
+    position: relative;
+    right: -30%;
+    animation: flash 1s infinite;
+
+}
+
+.see-more:hover {
+    background: cream;
+    border: 1px solid #0000ff;
+}
+
 
 /* See More Button 
 .see-more {
@@ -340,13 +381,14 @@ header {
 }
 
 .about-theme {
-    margin-top: 30px;
+    margin-top: 70px;
     height: 150px;
     width: 100%;
     text-align: center;
     position: relative;
     top: 0;
     color: white;
+    z-index: 8;
 }
 .quote-one {
     font-family: "Libertinus Math", system-ui, sans-serif;
@@ -365,11 +407,13 @@ header {
     background: linear-gradient(135deg, #f3f4f6, #ffffff);
     padding: 60px 20px;
     text-align: center;
+    box-shadow:  4px 5px #f0b422;
 }
 
 .fees-container {
     max-width: 800px;
     margin: 0 auto;
+    border-radius: 5px;
 }
 
 .fees-title {
@@ -383,14 +427,22 @@ header {
     color: #666;
     margin-bottom: 30px;
 }
-
 .fees-card, .details-card {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow:  4px 5px #f0b422;
     padding: 20px;
     margin-bottom: 20px;
     text-align: left;
+}
+.accdetails {
+    color: #000 !important;
+}
+.bankname {
+    color: #000;
+    font-size: 1.5rem;
+    text-decoration: underline
+    #f0b422 2px;
 }
 
 .fees-card ul {
@@ -504,6 +556,7 @@ header {
     text-align: center;
     font-size: 1.6rem;
     padding-top: 10px;
+    color: white;
 }
 
 .scroll-container {
@@ -825,7 +878,7 @@ header {
     margin-left: 50px;
     font-family: sans-serif;
     font-size: 1.5rem;
-    line-height: 0;
+    
 }
 
 .news-card-main {
@@ -834,6 +887,7 @@ header {
     gap: 10px;  
     overflow-x: scroll;
 }
+/*
 .news-card {
     height: 250px;
     width: 500px;
@@ -869,6 +923,22 @@ header {
     padding: 5px;
     border-radius: 10px;
 }
+*/
+/* Keyframes for flashing */
+@keyframes flash {
+    0%   { box-shadow: 0 0 20px #0000ff; }
+    50%  { box-shadow: 0 0 20px #f0b422; }
+    100% { box-shadow: 0 0 20px #0000ff; }
+}
+
+/* Flashing iframe */
+.facebook-embed:first-of-type {
+    animation: flash 1s infinite;
+    border: 1px solid #0000ff;
+    margin: 10px;
+}
+
+
 
 #contact {
     background: blue;
@@ -878,6 +948,11 @@ header {
 }
 .content {
     height: fit-content;
+    display: flex;
+    align-content: space-around;
+    gap: 40%;
+    
+    
 }
 .contact-title {
     text-align: center;
@@ -959,7 +1034,7 @@ header {
 }
 .copyright {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: black;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
@@ -968,7 +1043,7 @@ header {
 }
 .report {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: black;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
@@ -985,7 +1060,7 @@ header {
 }
 .ending {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: black;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
@@ -999,7 +1074,7 @@ header {
 
 /* On other devices*/
 /* Small devices (phones, less than 600px) */
-@media screen and (min-width: 300px) and (max-width: 600px)  {
+@media screen and (min-width: 220px) and (max-width: 600px)  {
     
     html {
         max-width: 100%; 
@@ -1009,7 +1084,7 @@ header {
         overflow-x: hidden;
     }
     header {
-        height: fit-content;
+        height: 80px;
         width: 100%;
     }
 
@@ -1054,9 +1129,9 @@ header {
     .hamburger {
         display: block;
         position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 3rem;
+        top: 30px;
+        right: 15px;
+        font-size: 2rem;
         cursor: pointer;
         z-index: 20;
         transition: 0.3s ease;
@@ -1096,17 +1171,20 @@ header {
     .fill {
         width: 100%;
         height: 100vh;
+        min-height: 800px;
         max-height: 900px;
     }
     .background {
         margin-top: 80px;
         height: 100vh;
+        min-height: 800px;
         max-height: 900px;
         background-image: url('pics/group photo.jpg');
         background-position: -600px -60px;
     }
     .blur {
         height: 100vh;
+        min-height: 800px;
         max-height: 900px;
         width: 100%;
         min-width: 100%;
@@ -1152,11 +1230,17 @@ header {
     .about-us-pics {
         width: 0;
     }
+    .about-us-text {
+        font-size: 1.2rem;
+    }
     .about-us-video {
     width: 90%;
     height: auto;
     max-height: 400px;
-    margin-top: 50px;
+    margin-top: 100px;
+    }
+    .see-more {
+        font-size: 1.3rem;
     }
     .school-life-title {
         font-size: 1.4rem;
@@ -1256,22 +1340,20 @@ header {
     }
     .content {
         margin-top: 120px;
+        display: block;
     }
     .related-links-title {
         text-align: left;
-        color: white;
     }
-    .related-links a {
-        color: white;
-    }
-    .contact-link a {
-        color: white;
-        font-size: 1.7rem;
+    .dissapearing-links {
+        visibility: hidden;
     }
     .map {
-        background-color: blue;
-        color: white;
+        align-items: center;
     }
+    
+    
+ 
 
 }
 
@@ -1279,7 +1361,7 @@ header {
 @media screen and (min-width: 500px) and
 (max-width: 899px) {
     header {
-        height: auto;
+        height: 80px;
     }
     .hamburger {
         display: block;
@@ -1350,11 +1432,15 @@ header {
     }
     .bottom {
         position: relative;
-        top: -20px;
+        top: 0px;
     }
     
     #about {
         padding-bottom: 0;
+    }
+    .about-us-video {
+        position: relative;
+        top: 2px;   
     }
     .logo-raw {
         visibility: hidden;
@@ -1377,10 +1463,16 @@ header {
     }
     .about-us-text {
         margin: 0;
+        margin-bottom: 200px;
+    }
+    .see-more {
+        position: relative;
+        top: -170px;
+        font-size: 1.5rem;
     }
     .about-us-video {
         position: absolute;
-        top: 600px;
+        top: 700px;
         left: 50px;
     }
     .bottom {
@@ -1419,19 +1511,47 @@ header {
         background: #f0f0f0;
         width: 320px;
         height: 50vh;
-        max-height: 200px;
+        max-height: 300px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         border-radius: 8px;
         opacity: 1;
         pointer-events: auto;
         font-size: 1.8rem;
         overflow: scroll;
-        z-index: 19;
+        
         transition: 3s;
         transform: translateY(0);
     }
     #nav-bar {
         width: 0;
+    }
+    
+    .see-more {
+        position: relative;
+        top: -200px
+    }
+    #about {
+        margin-bottom: 600px;
+    }
+    .about-us-video {
+        position: relative;
+        top: 0;
+        margin-top: 90px;
+        
+    }
+    .fees-container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .accdetails {
+        color: #000 !important;
+        font-size: 1.4rem !important;
+        margin-left: 20px;
+        line-height: 50px;
+    }
+    .content {
+        gap: 10%;
     }
 }
 @media screen and (min-width: 899px) and (max-width: 1064px) {
@@ -1444,7 +1564,7 @@ header {
         display: block;
         position: absolute;
         right: 30px;
-        top: 10px;
+        top: 0;
         font-size: 4rem;
         cursor: pointer;
         z-index: 20;
@@ -1455,7 +1575,7 @@ header {
         transform: translateY(-20px);
         transition: opacity 0.6s ease, transform 0.6s ease;
         position: absolute;
-        top: 70px;
+        top: 60px;
         right: 0;
         background: #f0f0f0;
         width: 220px;
@@ -1502,16 +1622,28 @@ header {
         position: relative;
         top: 2px;
     }
+    .see-more {
+        position: relative;
+        top: 0;
+        margin-bottom: 150px;
+    }
+    
     .about-us-pics {
         position: relative;
-        top: 50px;
+        top: 0;
     }
     .about-us-video {
         padding-bottom: 50px;
+        height: auto;
+        width: auto;
+        min-width: 500px;
+        min-height: 400px;
     }
     .about-us-text {
-        overflow-y: scroll;
-        height: 600px;
+        overflow: hidden;
+    }
+    .about-us-text.expanded {
+        max-height: fit-content;
     }
 }
 
@@ -1541,11 +1673,20 @@ header {
         position: relative;
         top: 2px;
     }
+    #nav-bar {
+        position: absolute;
+        right: 0;
+        max-width: 600px;
+    }
+    .logo-raw {
+        position: absolute;
+        top: 300px;
+    }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1500px) {
     header {
-        height: 100px;
+        height: 80px;
     }
     .title {
         font-size: 2.5rem;
@@ -1665,7 +1806,7 @@ header {
 
 
 /* Need to adjust the HOME */
-@media screen and (min-width: 1500px) and (max-width: 2400px) {
+@media screen and (min-width: 1500px) and (max-width: 3400px) {
     .title {
         font-size: 2rem;
     }
@@ -1683,18 +1824,58 @@ header {
     .logo-raw-pic {
         min-width: 500px;
         width: 800px;
+        position: absolute;
+        top: -500px;
+        right: 40%;
+    }
+    #home {
+        width: 100%;
+        height: 100vh;
+        min-height: 800px;
+        max-height: 900px;
+    }
+    .blur {
+        width: 100%;
+        height: 100vh;
+        min-height: 800px;
+        max-height: 900px;
+    }
+    .fill {
+        width: 100%;
+        height: 100vh;
+        min-height: 800px;
+        max-height: 900px;
+    }
+    .background {
+        width: 100%;
+        height: 100vh;
+        min-height: 800px;
+        max-height: 900px;
+        background-position: -600px -60px;
+        image-rendering: pixelated;
+    }
+    .bottom {
+        width: 100%;
+        position: relative;
+        bottom: 50px;
+    }
+    .overlay-bottom {
+        background-color: transparent;
+        position: relative;
+        bottom: 50px;
+        z-index: 5;
     }
     .introduction {
         top: 200px;
         left: 100px;
-        width: 500px;
-        font-size: 2rem;
+        width: 1000px;
+        font-size: 3rem;
     }
     .welcome-statement {
         font-size: 4rem;
     }
     .about-us {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     .about-us-text {
         font-size: 2.2rem;

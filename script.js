@@ -39,3 +39,14 @@ document.getElementById('seeMoreBtn').addEventListener('click', function() {
     text.classList.toggle('expanded');
     this.textContent = text.classList.contains('expanded') ? 'See Less' : 'See More';
 });
+
+document.getElementById('seeMoreBtn').addEventListener('click', function() {
+    const aboutText = document.getElementById('aboutText');
+    aboutText.classList.toggle('expanded');
+    
+    if (aboutText.classList.contains('expanded')) {
+        this.textContent = 'See Less ↑';
+    } else {
+        this.textContent = 'See More →';
+    }
+});
