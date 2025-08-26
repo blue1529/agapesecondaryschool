@@ -8,23 +8,28 @@
 
 
 <url>
-  <loc>https://agapesecondaryschool.vercel.app/</loc>
-  <lastmod>2025-08-25T06:16:45+00:00</lastmod>
+  <loc>https://blue1529.github.io/agapesecondaryschool/</loc>
+  <lastmod>2025-08-26T08:40:14+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://agapesecondaryschool.vercel.app/privacypolicy.html</loc>
-  <lastmod>2025-08-25T06:16:46+00:00</lastmod>
+  <loc>https://blue1529.github.io/agapesecondaryschool/about.html</loc>
+  <lastmod>2025-08-26T08:40:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://agapesecondaryschool.vercel.app/termsofservice.html</loc>
-  <lastmod>2025-08-25T06:16:46+00:00</lastmod>
+  <loc>https://blue1529.github.io/agapesecondaryschool/privacypolicy.html</loc>
+  <lastmod>2025-08-26T08:40:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://agapesecondaryschool.vercel.app/index.html</loc>
-  <lastmod>2025-08-25T06:16:46+00:00</lastmod>
+  <loc>https://blue1529.github.io/agapesecondaryschool/termsofservice.html</loc>
+  <lastmod>2025-08-26T08:40:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://blue1529.github.io/agapesecondaryschool/index.html</loc>
+  <lastmod>2025-08-26T08:40:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
