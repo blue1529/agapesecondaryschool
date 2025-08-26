@@ -18,6 +18,7 @@ html, body {
     --primary-color: #4444e6;
     --secondary-color: #f0b422;
     --nav-link-bgcolor: rgba(255, 255, 255, 0.761);
+    --nav-link-hovercolor: #4444e6;
     --background-color: #f9f9f9;
     --home-blur: rgba(42, 92, 255, 0.675);
     --text-color: #000;
@@ -33,6 +34,7 @@ body.dark-theme {
     --primary-color: #2858f5;
     --secondary-color: #f0b422;
     --nav-link-bgcolor: rgba(45, 45, 45, 0.721);
+    --nav-link-hovercolor: #f0b422;
     --background-color: #121212;
     --home-blur: rgba(30, 64, 175, 0.6);
     --text-color: #e0e0e0;
@@ -147,12 +149,12 @@ header {
     bottom: -5px;
     width: 0%;
     height: 2px;
-    background: linear-gradient(90deg, var(--primary-color)), #4facfe;
+    background: linear-gradient(90deg, var(--nav-link-hovercolor));
     transition: width 0.4s ease;
 }
 
 .nav-link:hover {
-    color: darkblue;
+    color: var(--nav-link-hovercolor);
 }
 
 .nav-link:hover::after {
@@ -226,48 +228,6 @@ header {
 .school-icon {
     margin-left: -36px;
 }
-
-.logo-raw {
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    z-index: 9;
-}
-.logo-raw-pic {
-    min-width: 300px;
-    width: 500px;
-    transition: 1s;
-}
-
-/*Enroll button available
-.enroll {
-    visibility: hidden;
-    position: absolute;
-    top: 450px;
-    left: 100px;
-    z-index: 5;
-    
-}
-.enroll-button {
-    background-color: #1a7bbb;
-    height: 50px;
-    width: 120px;
-    border-radius: 10px;
-    color:black;
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: 1.3rem;
-    border-color: black;
-    border-width: 3px;
-    cursor: pointer;
-}
-.enroll-button:hover {
-    background-color: #055083;
-    color: azure;
-}
-    */
-
-
 
 #about {
     height: fit-content;
@@ -1300,13 +1260,6 @@ header {
     .logo {
         width: 300px;
     }
-    .logo-raw {
-        width: 0;
-    }
-    .logo-raw-pic {
-        width: 0;
-        min-width: 0;
-    }
     
     #home {
         width: 100%;
@@ -1609,12 +1562,6 @@ header {
         min-width: 100%;
         font-size: 1.2rem;
     }
-    .logo-raw {
-        visibility: hidden;
-    }
-    .logo-raw-pic {
-        visibility: hidden;
-    }
 
 }
 /* Fot the about us content*/
@@ -1868,10 +1815,7 @@ header {
         width: 90px;
         height: 80px;
     }
-    .logo-raw-pic {
-        min-width: 300px;
-        width: 500px;
-    }
+    
     .introduction {
         top: 150px;
         left: 50px;
@@ -1947,14 +1891,6 @@ header {
         position: absolute;
         right: 0;
         max-width: 800px;
-    }
-    
-    .logo-raw {
-        min-width: 400px;
-        width: 500px;
-        position: absolute;
-        right: 0;
-        top: 10%;
     }
     #home {
         width: 100%;
