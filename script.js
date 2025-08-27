@@ -46,15 +46,38 @@ document.querySelectorAll('.scroll-section').forEach(section => {
     leftBtn.addEventListener('click', () => container.scrollBy({ left: -300, behavior: 'smooth' }));
     rightBtn.addEventListener('click', () => container.scrollBy({ left: 300, behavior: 'smooth' }));
 });
-//theme button
+
+
 const toggleButton = document.getElementById('theme-toggle');
-const themeImage = document.getElementById('theme-image'); // optional
+    const themeImage = document.getElementById('theme-image'); // optional
+    const savedTheme = localStorage.getItem('theme');
 
-toggleButton.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark-theme');
+    // Step 1: Apply saved preference OR system preference
+    if (savedTheme) {
+      document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+      toggleButton.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+      if (themeImage) themeImage.src = savedTheme === 'dark' ? 'pics/logo-dark.png' : 'pics/logo-light.png';
+    } else {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.body.classList.toggle('dark-theme', prefersDark);
+      toggleButton.textContent = prefersDark ? '☀️' : '🌙';
+      if (themeImage) themeImage.src = prefersDark ? 'pics/logo-dark.png' : 'pics/logo-light.png';
+    }
 
-    // Swap icon and image
-    toggleButton.textContent = isDark ? '☀️' : '🌙';
-    if (themeImage) themeImage.src = isDark ? 'pics/logo-dark.png' : 'pics/logo-light.png';
-});
+    // Step 2: Toggle on button click
+    toggleButton.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-theme');
+      toggleButton.textContent = isDark ? '☀️' : '🌙';
+      if (themeImage) themeImage.src = isDark ? 'pics/logo-dark.png' : 'pics/logo-light.png';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Step 3 (optional): React to system changes only if user hasn't overridden
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
+      if (!localStorage.getItem('theme')) {
+        document.body.classList.toggle("dark-theme", e.matches);
+        toggleButton.textContent = e.matches ? '☀️' : '🌙';
+        if (themeImage) themeImage.src = e.matches ? 'pics/logo-dark.png' : 'pics/logo-light.png';
+      }
+    });
 

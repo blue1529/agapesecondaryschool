@@ -15,7 +15,7 @@ html, body {
     max-width: 100%;
 }
 :root {
-    --primary-color: #4444e6;
+    --primary-color: #1f1fb6;
     --secondary-color: #f0b422;
     --nav-link-bgcolor: rgba(255, 255, 255, 0.761);
     --nav-link-hovercolor: #4444e6;
@@ -31,7 +31,7 @@ html, body {
 }
 /* Dark Theme */
 body.dark-theme {
-    --primary-color: #2858f5;
+    --primary-color: #1f1fb6;
     --secondary-color: #f0b422;
     --nav-link-bgcolor: rgba(45, 45, 45, 0.721);
     --nav-link-hovercolor: #f0b422;
@@ -471,7 +471,6 @@ header {
     font-size: 1.5rem;
     text-decoration: underline
     var(--secondary-color) 2px;
-    margin-left: 20px;
     font-family: 'Merriweather', serif;
 }
 
