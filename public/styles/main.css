@@ -1277,7 +1277,7 @@ header {
         height: 100vh;
         min-height: 800px;
         max-height: 900px;
-        background-image: url('pics/group photo.jpg');
+        background-image: url('/pics/group photo.jpg');
         background-position: -600px -60px;
     }
     .blur {
@@ -1990,4 +1990,5 @@ header {
         font-size: 1.5rem;
     }
     
+
 }
